@@ -1,0 +1,125 @@
+---
+title: Course one tagged with cat1 tag1
+author: Chris Reudenbach
+date: '2021-10-20'
+slug: []
+categories:
+  - cat1
+tags:
+  - tag1
+toc: true
+subtitle: 'This is a template course one'
+description: 'description'
+image: '/images/header-cat1.jpg'
+weight: 3
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+<div id="TOC">
+
+</div>
+
+<style>.myDiv {margin-top: -36px;margin-right: -34%; text-align: right;}</style>
+<div class="myDiv">
+<p><em>Source: <a href="https://en.wikipedia.org/wiki/John_Snow">Dr. John Snow</a> <a href="https://w.wiki/QtV">via wikimedia</a></em></p>
+</div>
+<div id="rmarkdown-examples" class="section level2">
+<h2>Rmarkdown examples</h2>
+</div>
+<div id="highlight-on-the-fly" class="section level2">
+<h2>highlight on the fly</h2>
+{{% highlight "bash" %}}
+echo hello world;
+{{% /highlight %}}
+</div>
+<div id="link-to-local-pdf" class="section level2">
+<h2>link to local pdf</h2>
+<p>{{< pdf "gi-base" "/assets/pdfs/test.pdf" >}}</p>
+</div>
+<div id="link-to-gist" class="section level2">
+<h2>link to gist</h2>
+<p>{{% gist "gisma" "bed5f4431b6d39098a35472359bb9969" %}}</p>
+</div>
+<div id="link-to-web-image" class="section level1">
+<h1>link to web image</h1>
+<div class="figure">
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Snow-cholera-map.jpg" alt="" />
+<p class="caption">Dr. John Snow’s map of the 1854 cholera outbreak in Soho, London via Wikimedia Commons</p>
+</div>
+<div id="link-to-local-image" class="section level2">
+<h2>link to local image</h2>
+<img src="/gi-base/assets/images/ML_interpol.png" />
+<figure>
+<figcaption>
+The original dataset (top left) is a terrain model reduced to 8 meters with 48384 single pixels.
+For interpolation, 1448 points were randomly drawn and interpolated with conventional kriging (top right), support vector machines (SVM) (middle left), neural networks (middle right), and two variants of random forest (bottom row). In each method, only the distance of the drawn points is used as a dependency.<br />
+
+</figcaption>
+</figure>
+</div>
+<div id="r-code-generating-a-download" class="section level2">
+<h2>r code generating a download</h2>
+</div>
+<div id="link" class="section level2">
+<h2>link</h2>
+<p><a href="https://www.jstor.org/stable/143141">Tobler 1970</a>.</p>
+</div>
+<div id="integration-of-local-html-content" class="section level2">
+<h2>integration of local html content</h2>
+<p>{{% hp5 "/gi-base/cases/suisse1.html" "700" "680" "center" "The blue dots are a typical example of irregularly distributed  points in space -- in this case, rain gauges in Switzerland. The overlaid  polygons are the corresponding Voronoi segments that define the corresponding closest geometrical areas (gisma 2021)" %}}</p>
+<iframe src="https://gis-ma.org" title="Gis Lab Marburg University Website" width="100%" height="950px" allowfullscreen="true">
+</iframe>
+</div>
+</div>
+<div id="common-markdown-table" class="section level1">
+<h1>Common markdown table</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Unit</th>
+<th>Topic</th>
+<th>Learning Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>01-1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>06</strong></td>
+<td><strong>Wrap-up</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>have</td>
+<td>fun</td>
+<td>!</td>
+</tr>
+</tbody>
+</table>
+<div class="boxSuccess">
+<p class="headline">
+Hint
+</p>
+<p class="textline">
+Again - For the course it is <strong>mandantory</strong> to save this script in the <code>src</code> folder named <code>course-name-provided-by-the-instructor_setup.R</code> and <strong>source it always at the beginning</strong> of each project start or at the start of an analysis or data processing script that is connected with this project.
+</p>
+</div>
+<p>{{% alert "Hint" "success" "black" "black" "Again - For the course it is **mandantory** to save this script in the *src* folder named *course-name-provided-by-the-instructor_setup.R* and **source it always at the beginning** of each project start or at the start of an analysis or data processing script that is connected with this project." %}}</p>
+<div id="collapse" class="section level2">
+<h2>collapse</h2>
+<p>{{< collapse "item" "content" >}}</p>
+</div>
+<div id="accordion" class="section level2">
+<h2>accordion</h2>
+<p>{{< acco "item1" "item2" "item3" "content1" "content2" "content3" >}}</p>
+</div>
+</div>

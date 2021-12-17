@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on aGis Website 2021/2022</title>
+    <link>https://katharinakiem.github.io/agis-2021-2022/post/</link>
+    <description>Recent content in Posts on aGis Website 2021/2022</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharinakiem.github.io/agis-2021-2022/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://katharinakiem.github.io/agis-2021-2022/post/about/</link>
+      <pubDate>Fri, 16 Jul 2021 11:24:06 +0800</pubDate>
+      
+      <guid>https://katharinakiem.github.io/agis-2021-2022/post/about/</guid>
+      <description>Some aboute this site text</description>
+    </item>
+    
+    <item>
+      <title>Instruction</title>
+      <link>https://katharinakiem.github.io/agis-2021-2022/post/instruction/</link>
+      <pubDate>Mon, 19 Jul 2021 10:52:59 +0800</pubDate>
+      
+      <guid>https://katharinakiem.github.io/agis-2021-2022/post/instruction/</guid>
+      <description>Features  Light/dark mode VSCode-style code hightlighting KaTeX Mermaid Google analytics Disqus/Utterances comments Optional ToC  Usage Before using Minima, make sure you&amp;rsquo;ve got Hugo(v0.41.0 or higher) installed on your device.
+Installation Suppose blog is where you place your sources.
+cd blog git init git submodule add --depth 1 https://github.com/mivinci/hugo-theme-minima.git themes/minima Or clone directly if you don&amp;rsquo;t wanna use the Git submodule.
+git clone https://github.com/mivinci/hugo-theme-minima.git themes/minima Anyways, you just need to put Minima under the blog/themes directory.</description>
+    </item>
+    
+    <item>
+      <title>Course one tagged with cat1 tag1</title>
+      <link>https://katharinakiem.github.io/agis-2021-2022/post/2021-10-20-cat-1/</link>
+      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharinakiem.github.io/agis-2021-2022/post/2021-10-20-cat-1/</guid>
+      <description>.myDiv {margin-top: -36px;margin-right: -34%; text-align: right;}Source: Dr. John Snow via wikimedia
+Rmarkdown exampleshighlight on the flyecho hello world;link to local pdf/gi-base/assets/pdfs/web/viewer.html?file=/gi-base/assets/pdfs/test.pdf  link to gist link to web imageDr. John Snow’s map of the 1854 cholera outbreak in Soho, London via Wikimedia Commons
+link to local imageThe original dataset (top left) is a terrain model reduced to 8 meters with 48384 single pixels.</description>
+    </item>
+    
+    <item>
+      <title>Course Two tagged with cat2 tag2</title>
+      <link>https://katharinakiem.github.io/agis-2021-2022/post/2021-10-20-cat-2/</link>
+      <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharinakiem.github.io/agis-2021-2022/post/2021-10-20-cat-2/</guid>
+      <description>Nothing here but cat 2 </description>
+    </item>
+    
+    <item>
+      <title>Markdown Syntax Guide</title>
+      <link>https://katharinakiem.github.io/agis-2021-2022/post/markdown-syntax/</link>
+      <pubDate>Sun, 18 Jul 2021 10:52:59 +0800</pubDate>
+      
+      <guid>https://katharinakiem.github.io/agis-2021-2022/post/markdown-syntax/</guid>
+      <description>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
+Note: to get the Markdown syntax have a look at the markrdown text file. The following HTML &amp;lt;h1&amp;gt;—&amp;lt;h6&amp;gt; elements represent six levels of section headings. &amp;lt;h1&amp;gt; is the highest section level while &amp;lt;h6&amp;gt; is the lowest.
+H1 H2 H3 H4 H5 H6 Paragraph Xerum, quo qui aut unt expliquam qui dolut labo.</description>
+    </item>
+    
+    <item>
+      <title>Math Typesetting</title>
+      <link>https://katharinakiem.github.io/agis-2021-2022/post/math-typesetting/</link>
+      <pubDate>Sun, 18 Jul 2021 10:52:59 +0800</pubDate>
+      
+      <guid>https://katharinakiem.github.io/agis-2021-2022/post/math-typesetting/</guid>
+      <description>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.
+Examples  This is inline $ \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)$ math. This is block math: $$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$ This is inline $ (\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…)$ math.
+This is block math: $$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>https://katharinakiem.github.io/agis-2021-2022/post/2020-12-01-r-rmarkdown/</link>
+      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      
+      <guid>https://katharinakiem.github.io/agis-2021-2022/post/2020-12-01-r-rmarkdown/</guid>
+      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.</description>
+    </item>
+    
+  </channel>
+</rss>

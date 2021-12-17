@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tag1 on aGis Website 2021/2022</title>
+    <link>https://katharinakiem.github.io/agis-2021-2022/tags/tag1/</link>
+    <description>Recent content in tag1 on aGis Website 2021/2022</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharinakiem.github.io/agis-2021-2022/tags/tag1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Course one tagged with cat1 tag1</title>
+      <link>https://katharinakiem.github.io/agis-2021-2022/post/2021-10-20-cat-1/</link>
+      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharinakiem.github.io/agis-2021-2022/post/2021-10-20-cat-1/</guid>
+      <description>.myDiv {margin-top: -36px;margin-right: -34%; text-align: right;}Source: Dr. John Snow via wikimedia
+Rmarkdown exampleshighlight on the flyecho hello world;link to local pdf/gi-base/assets/pdfs/web/viewer.html?file=/gi-base/assets/pdfs/test.pdf  link to gist link to web imageDr. John Snow’s map of the 1854 cholera outbreak in Soho, London via Wikimedia Commons
+link to local imageThe original dataset (top left) is a terrain model reduced to 8 meters with 48384 single pixels.</description>
+    </item>
+    
+  </channel>
+</rss>
