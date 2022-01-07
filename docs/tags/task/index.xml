@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>task on aGis Website 2021/2022</title>
+    <link>https://katharinakiem.github.io/agis-2021-2022/tags/task/</link>
+    <description>Recent content in task on aGis Website 2021/2022</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://katharinakiem.github.io/agis-2021-2022/tags/task/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Structural diversity metrics from Lidar data </title>
+      <link>https://katharinakiem.github.io/agis-2021-2022/post/2022-01-07-structural-diversity-metrics-from-lidar-data/</link>
+      <pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharinakiem.github.io/agis-2021-2022/post/2022-01-07-structural-diversity-metrics-from-lidar-data/</guid>
+      <description>Introduction To measure structural diversity of forests can help predict forest ecosystem functions such as microclimate or hydrology functions. Since forests structures are highly complex, dynamic and on multiple scales it is difficult to measure those structures accurately. One approach would be to use Lidar data because it provides threedimensional data of an area of interest.
+Some metrics calculated with Lidar data will be presented down below and the question if it is possible to predict microclimate parameters like temperature or humidity from those metrics will be answered.</description>
+    </item>
+    
+  </channel>
+</rss>

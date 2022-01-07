@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="Instruction" />
-    <meta property="og:title" content="Instruction" />
-    <meta property="twitter:title" content="Instruction" />
+    <meta name="title" content="Structural diversity metrics from Lidar data " />
+    <meta property="og:title" content="Structural diversity metrics from Lidar data " />
+    <meta property="twitter:title" content="Structural diversity metrics from Lidar data " />
     
 
     
-    <meta name="description" content="A clean and minimal Hugo theme porting from Minima on Hexo and adapted to gisma-courses need. [Click me](https://h.xjj.pub/) to take a look at the demo site of the original theme.">
-    <meta property="og:description" content="A clean and minimal Hugo theme porting from Minima on Hexo and adapted to gisma-courses need. [Click me](https://h.xjj.pub/) to take a look at the demo site of the original theme." />
-    <meta property="twitter:description" content="A clean and minimal Hugo theme porting from Minima on Hexo and adapted to gisma-courses need. [Click me](https://h.xjj.pub/) to take a look at the demo site of the original theme." />
+    <meta name="description" content="my description">
+    <meta property="og:description" content="my description" />
+    <meta property="twitter:description" content="my description" />
     
 
     
@@ -45,9 +45,9 @@
     <meta name="keyword"  content="my key words">
     <link rel="shortcut icon" href="/agis-2021-2022/img/favicon.ico">
 
-    <title>Instruction-my Seotitle</title>
+    <title>Structural diversity metrics from Lidar data -my Seotitle</title>
 
-    <link rel="canonical" href="/agis-2021-2022/agis-2021-2022/post/instruction/">
+    <link rel="canonical" href="/agis-2021-2022/agis-2021-2022/post/2022-01-07-structural-diversity-metrics-from-lidar-data/">
     
 
   <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
@@ -183,7 +183,7 @@
             <div class="col-lg-0 col-lg-offset-0 col-md-0 col-md-offset-0">
                 <div class="post-heading">
                    
-                    <h1>Instruction</h1>
+                    <h1>Structural diversity metrics from Lidar data </h1>
                    
             
                             
@@ -208,93 +208,129 @@
                 post-container">
 
                 
-                <h2 id="features">Features</h2>
+                <h2 id="introduction">Introduction</h2>
+<p>To measure structural diversity of forests can help predict forest ecosystem functions such as microclimate or hydrology functions. Since forests structures are highly complex, dynamic and on multiple scales it is difficult to measure those structures accurately. One approach would be to use Lidar data because it provides threedimensional data of an area of interest.<br>
+Some metrics calculated with Lidar data will be presented down below and the question if it is possible to predict microclimate parameters like temperature or humidity from those metrics will be answered.</p>
+<p>LaRue and Wagner et al (2020) suggest using metrics from the following categories to measure structural diversity of forests:</p>
 <ul>
-<li><input checked="" disabled="" type="checkbox"> Light/dark mode</li>
-<li><input checked="" disabled="" type="checkbox"> VSCode-style code hightlighting</li>
-<li><input checked="" disabled="" type="checkbox"> KaTeX</li>
-<li><input checked="" disabled="" type="checkbox"> Mermaid</li>
-<li><input checked="" disabled="" type="checkbox"> Google analytics</li>
-<li><input checked="" disabled="" type="checkbox"> Disqus/Utterances comments</li>
-<li><input checked="" disabled="" type="checkbox"> Optional ToC</li>
+<li>height eg mean canopy height, mean outer canopy height, maximum canopy height</li>
+<li>cover and openness eg deep gaps, cover fraction</li>
+<li>heterogeneity #(external and internal)</li>
+<li>vegetation area eg vegetation area index</li>
 </ul>
-<h2 id="usage">Usage</h2>
-<p>Before using Minima, make sure you&rsquo;ve got Hugo(v0.41.0 or higher) installed on your device.</p>
-<h3 id="installation">Installation</h3>
-<p>Suppose <code>blog</code> is where you place your sources.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">cd</span> blog
-git init
-git submodule add --depth <span style="color:#bd93f9">1</span> https://github.com/mivinci/hugo-theme-minima.git themes/minima
-</code></pre></div><p>Or  <code>clone</code> directly if you don&rsquo;t wanna use the Git submodule.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/mivinci/hugo-theme-minima.git themes/minima
-</code></pre></div><p>Anyways, you just need to put Minima under the <code>blog/themes</code> directory.</p>
-<h3 id="configuration">Configuration</h3>
-<p>Follow <a href="https://github.com/Mivinci/hugo-theme-minima/blob/main/exampleSite/config.toml">exampleSite/config.toml</a> and edit your own <code>blog/config.toml</code> file.</p>
-<h3 id="supported-front-matters">Supported Front Matters</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Field</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Explanation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">title</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">Title of the post, will be rendered in a <code>h1</code> tag</td>
-</tr>
-<tr>
-<td style="text-align:left">description</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">Description of the post, will be rendered in a <code>p</code> tag</td>
-</tr>
-<tr>
-<td style="text-align:left">date</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">Datetime that the post is written</td>
-</tr>
-<tr>
-<td style="text-align:left">categories</td>
-<td style="text-align:left">array</td>
-<td style="text-align:left">Array of categories the posts belongs to</td>
-</tr>
-<tr>
-<td style="text-align:left">tags</td>
-<td style="text-align:left">array</td>
-<td style="text-align:left">Array of tags the posts is related to</td>
-</tr>
-<tr>
-<td style="text-align:left">math</td>
-<td style="text-align:left">bool</td>
-<td style="text-align:left">True if the post needs to render math formulas</td>
-</tr>
-<tr>
-<td style="text-align:left">mermaid</td>
-<td style="text-align:left">bool</td>
-<td style="text-align:left">True if the post needs to render mermaid graphs</td>
-</tr>
-<tr>
-<td style="text-align:left">comment</td>
-<td style="text-align:left">bool</td>
-<td style="text-align:left">True if the post allows people to make comments</td>
-</tr>
-<tr>
-<td style="text-align:left">draft</td>
-<td style="text-align:left">bool</td>
-<td style="text-align:left">True if the post isn&rsquo;t already to production</td>
-</tr>
-<tr>
-<td style="text-align:left">toc</td>
-<td style="text-align:left">bool</td>
-<td style="text-align:left">True if the post needs a ToC</td>
-</tr>
-</tbody>
-</table>
-<h3 id="feedback">Feedback</h3>
-<p>Feedbacks to the original theme are welcome <a href="https://github.com/Mivinci/hugo-theme-minima/issues">here</a>.
-Feedbacks to the adapted theme are welcome too <a href="https://github.com/gisma-courses/hugo-theme-minima-gisma/issues">here</a>.</p>
+<p>Some indices from each category will be shown examplarily.</p>
+<h2 id="data-and-methods">Data and Methods</h2>
+<h3 id="load-data">Load data</h3>
+<p>The used data is a section of the forest of the University of Marburg clos to Caldern.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">lasfile <span style="color:#ff79c6">&lt;-</span> <span style="color:#50fa7b">list.files</span>(envrmt<span style="color:#ff79c6">$</span>path_l_raw,
+                  pattern <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">glob2rx</span>(<span style="color:#f1fa8c">&#34;*.las&#34;</span>),
+                  full.names <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">TRUE</span>)
+las <span style="color:#ff79c6">&lt;-</span> lidR<span style="color:#ff79c6">::</span><span style="color:#50fa7b">readLAS</span>(lasfile[1])
+<span style="color:#50fa7b">summary</span>(las)
+</code></pre></div><pre tabindex="0"><code>## class        : LAS (v1.3 format 1)
+## memory       : 2 Gb 
+## extent       : 477500, 478217.5, 5631730, 5632500 (xmin, xmax, ymin, ymax)
+## coord. ref.  : NA 
+## area         : 0.55 kunits²
+## points       : 26.35 million points
+## density      : 47.7 points/units²
+## File signature:           LASF 
+## File source ID:           0 
+## Global encoding:
+##  - GPS Time Type: GPS Week Time 
+##  - Synthetic Return Numbers: no 
+##  - Well Know Text: CRS is GeoTIFF 
+##  - Aggregate Model: false 
+## Project ID - GUID:        00000000-0000-0000-0000-000000000000 
+## Version:                  1.3
+## System identifier:         
+## Generating software:      rlas R package 
+## File creation d/y:        0/2018
+## header size:              235 
+## Offset to point data:     235 
+## Num. var. length record:  0 
+## Point data format:        1 
+## Point data record length: 28 
+## Num. of point records:    26353974 
+## Num. of points by return: 10055794 7269852 5128257 2678650 937508 
+## Scale factor X Y Z:       0.001 0.001 0.001 
+## Offset X Y Z:             4e+05 5e+06 0 
+## min X Y Z:                477500 5631730 232.798 
+## max X Y Z:                478217.5 5632500 371.824 
+## Variable Length Records (VLR):  void
+## Extended Variable Length Records (EVLR):  void
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#50fa7b">plot</span>(las, bg <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;green&#34;</span>, color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Z&#34;</span>,backend<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;rgl&#34;</span>)
+<span style="color:#50fa7b">plot</span>(las, map<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">TRUE</span>)
+</code></pre></div><h3 id="indices">Indices</h3>
+<ol>
+<li>Height:<br>
+Height metrics contain information about vertical patterns of the forest vegetation.</li>
+</ol>
+<p>To get the height metrics a Canopy height model is calculated at first.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#6272a4"># Calculate canopy height model with grid_canopy function of lidR package </span>
+<span style="color:#6272a4"># Points-to-raster algorithm with a resolution of 1 meter</span>
+<span style="color:#6272a4"># source: (https://rdrr.io/cran/lidR/man/grid_canopy.html)</span>
+
+<span style="color:#6272a4"># Load already nornmalized data and calculate chm </span>
+mof100_ctg_chm <span style="color:#ff79c6">&lt;-</span><span style="color:#50fa7b">readRDS</span>(<span style="color:#50fa7b">file.path</span>(envrmt<span style="color:#ff79c6">$</span>path_level1, <span style="color:#f1fa8c">&#34;mof100_ctg_chm.rds&#34;</span>))
+
+chm <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">grid_canopy</span>(mof100_ctg_chm, res <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>, <span style="color:#50fa7b">dsmtin</span>())
+</code></pre></div><pre tabindex="0"><code>## Warning in getProjectionRef(x, OVERRIDE_PROJ_DATUM_WITH_TOWGS84 = OVERRIDE_PROJ_DATUM_WITH_TOWGS84, : PROJ/GDAL PROJ string degradation in workflow
+##  repeated warnings suppressed
+##  Discarded datum European_Terrestrial_Reference_System_1989 in Proj4 definition: +proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs
+</code></pre><!-- raw HTML omitted -->
+<pre tabindex="0"><code>## Chunk 1 of 12 (8.3%): state &lt;U+26A0&gt;
+## Chunk 2 of 12 (16.7%): state &lt;U+2713&gt;
+## Chunk 3 of 12 (25%): state &lt;U+2713&gt;
+## Chunk 4 of 12 (33.3%): state &lt;U+2713&gt;
+## Chunk 5 of 12 (41.7%): state &lt;U+2713&gt;
+## Chunk 6 of 12 (50%): state &lt;U+2713&gt;
+## Chunk 7 of 12 (58.3%): state &lt;U+2713&gt;
+## Chunk 8 of 12 (66.7%): state &lt;U+2713&gt;
+## Chunk 9 of 12 (75%): state &lt;U+2713&gt;
+## Chunk 10 of 12 (83.3%): state &lt;U+2713&gt;
+## Chunk 11 of 12 (91.7%): state &lt;U+2713&gt;
+## Chunk 12 of 12 (100%): state &lt;U+2713&gt;
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">col <span style="color:#ff79c6">&lt;-</span> <span style="color:#50fa7b">height.colors</span>(<span style="color:#bd93f9">50</span>)
+<span style="color:#50fa7b">plot</span>(chm, col <span style="color:#ff79c6">=</span> col, main <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Mean canopy height within 1 m² cells&#34;</span>)
+</code></pre></div><!-- raw HTML omitted -->
+<p>As one can see in the plot, the mean canopy height in the research area varies from 0 to 40. <br>
+Further height metrics can be obtained from the CHM Rasterlayer which was built using the grid_canopy function:</p>
+<p>Mean outer canopy height (MOCH)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">mean.max.canopy.ht <span style="color:#ff79c6">&lt;-</span> <span style="color:#50fa7b">mean</span>(chm<span style="color:#ff79c6">@</span>data<span style="color:#ff79c6">@</span>values, na.rm <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">TRUE</span>) 
+</code></pre></div><p>Maximum canopy height</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">max.canopy.ht <span style="color:#ff79c6">&lt;-</span> <span style="color:#50fa7b">max</span>(chm<span style="color:#ff79c6">@</span>data<span style="color:#ff79c6">@</span>values, na.rm<span style="color:#ff79c6">=</span><span style="color:#ff79c6">TRUE</span>)
+</code></pre></div><pre tabindex="0"><code>## Warning in max(chm@data@values, na.rm = TRUE): kein nicht-fehlendes Argument für
+## max; gebe -Inf zurück
+</code></pre><ol start="2">
+<li>Cover and Openness:<br>
+Cover and Openness metrics &ldquo;describe openness of the outer surface of the canopy as a two dimensional (x, y) horizontal plane&rdquo; (Atkins et al 2018).</li>
+</ol>
+<p>These metrics can also be derived from the CHM:</p>
+<p>Deep Gaps and Deep Gap Fraction</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#6272a4">#number of cells in raster (also area in m2)</span>
+cells <span style="color:#ff79c6">&lt;-</span> <span style="color:#50fa7b">length</span>(chm<span style="color:#ff79c6">@</span>data<span style="color:#ff79c6">@</span>values) 
+chm.0 <span style="color:#ff79c6">&lt;-</span> chm
+chm.0<span style="color:#50fa7b">[is.na</span>(chm.0)] <span style="color:#ff79c6">&lt;-</span> <span style="color:#bd93f9">0</span> <span style="color:#6272a4">#replace NAs with zeros in CHM</span>
+<span style="color:#6272a4">#create variable for the number of deep gaps, 1 m^2 canopy gaps</span>
+zeros <span style="color:#ff79c6">&lt;-</span> <span style="color:#50fa7b">which</span>(chm.0<span style="color:#ff79c6">@</span>data<span style="color:#ff79c6">@</span>values <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>) 
+deepgaps <span style="color:#ff79c6">&lt;-</span> <span style="color:#50fa7b">length</span>(zeros) <span style="color:#6272a4">#number of deep gaps</span>
+<span style="color:#6272a4">#deep gap fraction, the number of deep gaps in the chm relative </span>
+<span style="color:#6272a4">#to total number of chm pixels</span>
+deepgap.fraction <span style="color:#ff79c6">&lt;-</span> deepgaps<span style="color:#ff79c6">/</span>cells 
+</code></pre></div><h2 id="results">Results</h2>
+<ul>
+<li>table with metrics</li>
+</ul>
+<h2 id="discussion">Discussion</h2>
+<p>Take your research question and your results and discuss the results with respect to your approach</p>
+<h2 id="references">References</h2>
+<ul>
+<li>LaRue &amp; Wager et al: Compatibility of Aerial and Terrestrial LiDAR for Quantifying Forest Structural Diversity <a href="https://doi.org/10.3390/rs12091407">https://doi.org/10.3390/rs12091407</a></li>
+<li>Atkins et al: Quantifying vegetation and canopy structural complexity from terrestrial LiDAR data using the forestr r package <a href="https://doi.org/10.1111/2041-210X.13061">https://doi.org/10.1111/2041-210X.13061</a></li>
+<li>grid canopy_dunction / lidr package <a href="https://rdrr.io/cran/lidR/man/grid_canopy.html">https://rdrr.io/cran/lidR/man/grid_canopy.html</a></li>
+<li>Code was used from the script structural metrics: <a href="https://datacommons.cyverse.org/browse/iplant/home/shared/NEON_workshop/tutorials/r_scripts/structural-diversity-discrete-return.r">https://datacommons.cyverse.org/browse/iplant/home/shared/NEON_workshop/tutorials/r_scripts/structural-diversity-discrete-return.r</a></li>
+</ul>
 
                 <style>
 .button {
@@ -367,7 +403,7 @@ Feedbacks to the adapted theme are welcome too <a href="https://github.com/gisma
         crossorigin="anonymous" 
         async>
 </script>
-<p>Due to an occasionally faulty page redirection, a 404 error may occur. please use the alternative <button class="button button1"> <a href="https://api.utteranc.es/authorize?redirect_uri=https%3a%2f%2fkatharinakiem.github.io%2fagis-2021-2022%2fpost%2finstruction%2f">Sign in with GitHub</a></button></p>
+<p>Due to an occasionally faulty page redirection, a 404 error may occur. please use the alternative <button class="button button1"> <a href="https://api.utteranc.es/authorize?redirect_uri=https%3a%2f%2fkatharinakiem.github.io%2fagis-2021-2022%2fpost%2f2022-01-07-structural-diversity-metrics-from-lidar-data%2f">Sign in with GitHub</a></button></p>
     
 </div>
 
@@ -377,13 +413,13 @@ Feedbacks to the adapted theme are welcome too <a href="https://github.com/gisma
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/agis-2021-2022/post/markdown-syntax/" data-toggle="tooltip" data-placement="top" title="Markdown Syntax Guide">&larr;
+                        <a href="/agis-2021-2022/post/2020-12-01-r-rmarkdown/" data-toggle="tooltip" data-placement="top" title="Hello R Markdown">&larr;
                             Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/agis-2021-2022/post/about/" data-toggle="tooltip" data-placement="top" title="About">Next
+                        <a href="/agis-2021-2022/post/math-typesetting/" data-toggle="tooltip" data-placement="top" title="Math Typesetting">Next
                             Post &rarr;</a>
                     </li>
                     
@@ -443,32 +479,6 @@ Feedbacks to the adapted theme are welcome too <a href="https://github.com/gisma
             </div>
         </div>
     </div>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
-  integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
-
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"
-  integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp" crossorigin="anonymous"></script>
-
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js"
-  integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    renderMathInElement(document.body, {
-      
-      
-      delimiters: [
-        { left: '$$', right: '$$', display: true },
-        { left: '$', right: '$', display: false },
-        { left: '\\(', right: '\\)', display: false },
-        { left: '\\[', right: '\\]', display: true }
-      ],
-      
-      throwOnError: false
-    });
-  });
-</script>
 
     
 </article>
