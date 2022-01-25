@@ -33,7 +33,7 @@ LaRue and Wagner et al (2020) suggest using metrics from the following categorie
 - heterogeneity #(external and internal) 
 - vegetation area eg vegetation area index
 
-Some indices from each category will be shown examplarily.
+Some indices from each category will be shown exemplarily.
 
 ## Data and Methods
 
@@ -51,86 +51,113 @@ rootDIR = "~/edu/agis"
 # define  additional packages uncomment if necessary
 appendpackagesToLoad = c("lidR", "link2GI", "mapview", "raster", "rgdal", "rlas", "sp", "sf")
 # define additional subfolders uncomment if necessary
-appendProjectDirList =  c("data/lvl0/", "data/normalized", "data/data_mof", "data/lvl1/", "l_raw", "level1")
+appendProjectDirList =  c("data/lidar/","data/lidar/l_raster","l_raw","l_norm", "level1")
 
+## define current projection (It is not magic you need to check the meta data or ask your instructor) 
+## ETRS89 / UTM zone 32N
+proj4 = "+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0"
 
 # MANDANTORY: calling the setup script also DO NOT change this line
-
 source(file.path(envimaR::alternativeEnvi(root_folder = rootDIR),"src/agis-setup.R"),echo = TRUE)
+rgdal::set_thin_PROJ6_warnings(TRUE)
+
+# define some color palettes
+mvTop = mapview::mapviewPalette("mapviewTopoColors")
+mvSpec = mapview::mapviewPalette("mapviewSpectralColors")
+mvVec =	 mapview::mapviewPalette("mapviewVectorColors") 
+mvRas =	 mapview::mapviewPalette("mapviewRasterColors")
+mapviewOptions(fgb = FALSE)
 
 ```
 
-### Load data 
-The used data is a section of the forest of the University of Marburg clos to Caldern. 
-```{r}
-lasfile <- list.files(envrmt$path_l_raw,
+### Load and prepare data 
+The used data contains a section of the forest of the University of Marburg close to Caldern. 
+```{r message=FALSE}
+las_file <- list.files(envrmt$path_l_raw,
                   pattern = glob2rx("*.las"),
                   full.names = TRUE)
-las <- lidR::readLAS(lasfile[1])
-summary(las)
+las <- lidR::readLAS(las_file[1])
 
-plot(las, bg = "green", color = "Z",backend="rgl")
+# add crs information 
+epsg_number = 25832
+raster::crs(las) <- epsg_number
+las
+
+# remove topography from point cloud - substract dtm from point clou 
+#- normalized dataset with ground at 0
+
+las_norm = lidR::normalize_height(las, lidR::tin())
+
 plot(las, map= TRUE)
 ```
 
-### Indices 
+### Metrics
 
 1. Height:  
 Height metrics contain information about vertical patterns of the forest vegetation.  
 
-To get the height metrics a Canopy height model is calculated at first. 
+To get an overview of the mean heights a Canopy height model is calculated and shown at first. 
 ```{r}
 # Calculate canopy height model with grid_canopy function of lidR package 
 # Points-to-raster algorithm with a resolution of 1 meter
 # source: (https://rdrr.io/cran/lidR/man/grid_canopy.html)
 
-# Load already nornmalized data and calculate chm 
-mof100_ctg_chm <-readRDS(file.path(envrmt$path_level1, "mof100_ctg_chm.rds"))
-
-chm = grid_canopy(mof100_ctg_chm, res = 1, dsmtin())
+# calculate the chm with the pitfree algorithm
+chm = lidR::grid_canopy(las_norm, 0.25, pitfree(c(0,2,5,10,15), c(0,1), subcircle = 0.2))
 
 col <- height.colors(50)
-plot(chm, col = col, main = "Mean canopy height within 1 m² cells")
+plot(chm, col = col, main = "Pitfree Canopy Height Model, 1 m² cells")
 
 ```
 
-As one can see in the plot, the mean canopy height in the research area varies from 0 to 40.    
-Further height metrics can be obtained from the CHM Rasterlayer which was built using the grid_canopy function:  
+As one can see in the plot, the mean canopy height in the research area varies from 0 to 40.  
 
-Mean outer canopy height (MOCH)
+Actual height metrics can be calculated using metrics functions from the lidR package on the LAS object. The output will RasterLayer objects (cell/grid level). 
+
+Mean and maximum canopy height and standard deviation within 1m² cells: 
 ```{r}
-mean.max.canopy.ht <- mean(chm@data@values, na.rm = TRUE) 
+height_metrics = function(x) {list(mean = mean(x), max = max(x), sd = sd(x))}
+height_results = grid_metrics(las_norm, ~height_metrics(Z), res = 1)
+
 ```
 
-Maximum canopy height
+```{r echo=FALSE}
+par_org = par()
+plot(height_results, col = height.colors(50), main = c("Canopy mean height within 1m² cells", "Canopy maximum height within 1m² cells", "Canopy height standard deviation\n within 1m² cells"))
+```
+
+For some research questions it is of interest to calculate the mean height at different height levels: 
 ```{r}
-max.canopy.ht <- max(chm@data@values, na.rm=TRUE)
+mean_height_10 = grid_metrics(las_norm, ~mean(Z), 10) # how with high resolution? 
+```
+
+```{r echo=FALSE}
+plot(mean_height_10, col = height.colors(50), main = "Canopy mean height within 1m² cells at 10m height")
 ```
 
 
 2. Cover and Openness:  
 Cover and Openness metrics "describe openness of the outer surface of the canopy as a two dimensional (x, y) horizontal plane" (Atkins et al 2018).
 
-These metrics can also be derived from the CHM:  
 
-Deep Gaps and Deep Gap Fraction 
+Deep Gaps and Deep Gap Fraction  
+unfortunately not a grid metric 
 ```{r}
-#number of cells in raster (also area in m2)
-cells <- length(chm@data@values) 
-chm.0 <- chm
-chm.0[is.na(chm.0)] <- 0 #replace NAs with zeros in CHM
-#create variable for the number of deep gaps, 1 m^2 canopy gaps
-zeros <- which(chm.0@data@values == 0) 
-deepgaps <- length(zeros) #number of deep gaps
-#deep gap fraction, the number of deep gaps in the chm relative 
-#to total number of chm pixels
-deepgap.fraction <- deepgaps/cells 
+
+ttops_chm = find_trees(chm, lmf(8))
+algo1 = dalponte2016(chm, ttops_chm,th_seed = 0.55,th_tree = 0.65,max_cr = 8)
+trees = lidR::segment_trees(las_norm,  algo1 , uniqueness = "bitmerge")
+
+
+gap_tree = tree_metrics(trees, func = ~lidR::gap_fraction_profile(Z))
 ```
 
+```{r echo=FALSE}
+plot(gap_tree, main = "Tree gaps")
+```
 
 ## Results
 
-- table with metrics 
 
 ## Discussion
 Take your research question and your results and discuss the results with respect to your approach
@@ -139,7 +166,7 @@ Take your research question and your results and discuss the results with respec
 
 - LaRue & Wager et al: Compatibility of Aerial and Terrestrial LiDAR for Quantifying Forest Structural Diversity https://doi.org/10.3390/rs12091407
 - Atkins et al: Quantifying vegetation and canopy structural complexity from terrestrial LiDAR data using the forestr r package https://doi.org/10.1111/2041-210X.13061
-- grid canopy_dunction / lidr package https://rdrr.io/cran/lidR/man/grid_canopy.html
+- grid canopy_function / lidr package https://rdrr.io/cran/lidR/man/grid_canopy.html
 - Code was used from the script structural metrics: https://datacommons.cyverse.org/browse/iplant/home/shared/NEON_workshop/tutorials/r_scripts/structural-diversity-discrete-return.r
 
 
